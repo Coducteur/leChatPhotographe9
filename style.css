@@ -1,0 +1,28 @@
+:root {
+    /*themes couleurs*/
+    --colorDark: #07020D;
+    --colorLight: #FFFFFF;
+    --colorTheme1: #52150050;
+    --colorTheme2: #2a7f635e;
+    --colorTheme3: #BAB5B6;
+
+    /*Breakpoint*/
+    --breakpointCellPhone: 412px;
+    --breakpointTablett: 768px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+
+/*tailles des icones du footer*/
+.ico_reseaux {
+    width: 30px;
+    height: 30px;
+}
