@@ -17,7 +17,7 @@ font-family: 'Rubik Microbe', cursive;
 :root {
     /*themes couleurs*/
     --colorDark: #07020D;
-    --colorLight: #FFFFFF;
+    --colorLight: #ffffff63;
     --colorTheme1: #52150050;
     --colorTheme2: #2a7f635e;
     --colorTheme3: #bab5b639;
@@ -32,13 +32,19 @@ font-family: 'Rubik Microbe', cursive;
     margin: 0;
     padding: 0;
     list-style: none;
+
 }
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
     display: grid;
-    grid-template-rows: 20vh 70vh 10vh;
-    grid-template-columns: 30vw 50vw 5w;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 3fr 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -64,6 +70,21 @@ h1 {
 .grid-zoneContainerBottom {
     grid-area: 3/1/4/4;
 }
+.vide{
+    height: 20px;
+}
+.main-Nav {
+    display: flex;
+    padding-left: 45px;
+    height: 400px;
+    flex-direction: column;
+    align-content: space-around;
+    background-color: rgb(255, 255, 255);
+}
+
+.main-Nav li {
+    padding: 10px;
+}
 
 .background-img-indexContainer {
     background-image: url(./media/img_maxRez/Joris.png);
@@ -74,7 +95,7 @@ h1 {
 
 .article-index {
     width: 300px;
-    background-color: var(--colorTheme3);
+    background-color: var(--colorLight);
 }
 
 .article-index p {
@@ -83,7 +104,6 @@ h1 {
 }
 
 .flex-footer {
-    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
