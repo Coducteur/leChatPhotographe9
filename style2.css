@@ -134,18 +134,22 @@ div.imgBackground {
     background-position: center;
 }
 
-.gridContainer-articleIndex {
+.gridContainer-mainIndex {
     grid-area: 3/3/9/7;
     margin: 1.5rem;
-    background-color: var(--colorTheme3);
-    border-radius: 5px;
+      
 }
 
-.gridContainer-articleIndex h2,
-.gridContainer-articleIndex p {
+.gridContainer-mainIndex h2,
+.gridContainer-mainIndex p {
     padding: 0.5rem;
+
 }
 
+.background-mainIndex {
+    border-radius: 5px;
+    background-color: var(--colorTheme3);
+}
 /*==================end of index page======================*/
 
 
