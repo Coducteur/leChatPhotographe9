@@ -18,9 +18,9 @@ font-family: 'Rubik Microbe', cursive;
     /*themes couleurs*/
     --colorDark: #07020D;
     --colorLight: #ffffff63;
-    --colorTheme1: #52150050;
+    --colorTheme1: #bd6b4250;
     --colorTheme2: #2a7f635e;
-    --colorTheme3: #bab5b639;
+    --colorTheme3: #e4e4e44e;
 
     /*Breakpoint*/
     --breakpointCellPhone: 412px;
@@ -90,11 +90,11 @@ h1 p {
 
 .main-Nav li a {
     padding-left: 60px;
-    
+
 }
 
-.vide {
-    height: 1.5rem;
+.line-animated a {
+    border-bottom: #07020D solid 3px;
 }
 
 /*container Flex (copy & ico)*/
@@ -108,8 +108,8 @@ h1 p {
 
 /*tailles des icones du footer*/
 .ico_reseaux {
-    width: 30px;
-    height: 30px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 /*================ end of common pages ==================*/
@@ -126,19 +126,33 @@ div.imgBackground {
 
 .gridContainer-articleIndex {
     grid-area: 3/3/9/7;
-    margin: 20px;
-    /* background-color: aqua; */
+    margin: 1.5rem;
+    background-color: var(--colorTheme3);
+    border-radius: 5px;
 }
 
 h2 {
     font-family: 'Cormorant', serif;
     font-size: 2rem;
 }
-li { margin: 20px;}
-#home a {
-    border-bottom: #07020D solid 3px;
+
+li {
+    margin: 1.5rem;
 }
+
+
+.gridContainer-articleIndex h2,
+.gridContainer-articleIndex p {
+    padding: 0.5rem;
+}
+
 /*==================end of index page======================*/
+
+
+/*==================presentation page=====================*/
+
+
+/*=============end of presentation page=====================*/
 
 /*==========================Media queries:=============*/
 @media screen and (min-width: 1400px) {
