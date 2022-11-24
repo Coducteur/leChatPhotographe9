@@ -12,7 +12,7 @@ font-family: 'Rubik Microbe', cursive;
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Open+Sans&family=Rubik+Dirt&family=Rubik+Microbe&display=swap');
 
 
-
+/*common pages*/
 
 :root {
     /*themes couleurs*/
@@ -37,70 +37,49 @@ font-family: 'Rubik Microbe', cursive;
 
 body {
     /* height: 100vh; */
+    width: 100vh;
     display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
-    grid-template-columns: 1fr 3fr 20px;
+    grid-template-rows: repeat(10, 10vh);
+    grid-template-columns: repeat(10, 10vw);
     font-family: 'Open Sans', sans-serif;
 }
 
-a {
-    text-decoration: none;
+.gridContainer-Header {
+    grid-area: 1/1/2/11;
 }
-
-h1 {
+h1 p{
     font-family: 'Rubik Microbe', cursive;
     font-size: 2.5rem;
-    padding: 10px;
+    padding-left: 15px;
 
 }
 
-.grid-zoneContainerTop {
-    grid-area: 1/1/2/4;
+.gridContainer-sectionLeft {
+    grid-area: 2/1/10/5;
 
 }
 
-.grid-zoneContainerLeft {
-    grid-area: 2/1/3/2;
-}
+.gridContainer-sectionRight {
+    grid-area: 2/5/10/11;
+    /* background-color: aquamarine; */
 
-.grid-zoneContainerRight {
-    grid-area: 2/2/3/4;
 }
-
-.grid-zoneContainerBottom {
-    grid-area: 3/1/4/4;
-}
-.vide{
-    
-}
-.main-Nav {
-    display: flex;
-    padding-left: 60px;
-    height: 400px;
-    flex-direction: column;
-    align-content: space-around;
-    background-color: rgb(255, 255, 255);
-}
-
-.main-Nav li {
-    padding: 10px;
-}
-
-.background-img-indexContainer {
+div.imgBackground {
+    width: 100%;
+    height: 100%;
     background-image: url(./media/img_maxRez/Joris.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
-.article-index {
-    width: 300px;
-    background-color: var(--colorLight);
+.gridContainer-articleIndex {
+    grid-area: 3/3/9/7;
+    margin: 20px;
 }
 
-.article-index p {
-    margin: 20px;
-    text-align: ;
+.gridContainer-Footer {
+    grid-area: 10/1/11/11;
 }
 
 .flex-footer {
