@@ -33,6 +33,7 @@ font-family: 'Rubik Microbe', cursive;
     padding: 0;
     list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
     grid-template-rows: repeat(10, 10vh);
     grid-template-columns: repeat(10, 10vw);
     font-family: 'Open Sans', sans-serif;
+    justify-content: start
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++*/
@@ -55,7 +57,7 @@ body {
 }
 
 .gridContainer-sectionLeft {
-    grid-area: 3/1/10/5;
+    grid-area: 3/1/10/3;
 }
 
 .gridContainer-sectionRight {
@@ -74,7 +76,7 @@ body {
 
 h1 p {
     font-family: 'Rubik Microbe', cursive;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding-left: 15px;
 
 }
@@ -86,8 +88,9 @@ h1 p {
     background-color: rgb(255, 255, 255);
 }
 
-.main-Nav li {
+.main-Nav li a {
     padding-left: 60px;
+    
 }
 
 .vide {
@@ -131,7 +134,10 @@ h2 {
     font-family: 'Cormorant', serif;
     font-size: 2rem;
 }
-
+li { margin: 20px;}
+#home a {
+    border-bottom: #07020D solid 3px;
+}
 /*==================end of index page======================*/
 
 /*==========================Media queries:=============*/
