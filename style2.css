@@ -156,6 +156,8 @@ div.imgBackground {
 .background-mainIndex {
     border-radius: 5px;
     background-color: var(--colorTheme3);
+    max-height: 100%;
+    overflow-y: scroll;
 }
 
 /*==================end of index page======================*/
@@ -164,7 +166,7 @@ div.imgBackground {
 /*==================presentation page=====================*/
 .imgBckGrd-Prez{
     background-image: url(./media/img_maxRez/Joris.png);
-    
+
 }
 .gridContainer-mainArticle1 {
     grid-area: 3/4/6/10;
