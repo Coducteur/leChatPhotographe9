@@ -63,7 +63,7 @@ body {
 }
 
 .gridContainer-sectionRight {
-    grid-area: 3/5/10/11;
+    grid-area: 3/4/10/11;
 }
 
 .gridContainer-Footer {
@@ -162,11 +162,34 @@ div.imgBackground {
 
 
 /*==================presentation page=====================*/
-.gridContainer-mainPreseentation1 {
-    grid-area: 3/3/9/7;
+.imgBckGrd-Prez{
+    background-image: url(./media/img_maxRez/Joris.png);
+    
+}
+.gridContainer-mainArticle1 {
+    grid-area: 3/4/6/10;
     margin: 1.5rem;
+}
 
+.gridContainer-mainArticle2 {
+    grid-area: 6/4/9/10;
+    margin: 1.5rem;
+}
 
+.gridContainer-mainArticle1 div img,
+.gridContainer-mainArticle2 div img {
+    width: 150px;
+    height: auto;
+}
+
+.flex-containerPrez {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.flex-containerPrez div {
+    margin: 20px;
+}
 /*=============end of presentation page=====================*/
 
 /*==========================Media queries:=============*/
@@ -174,9 +197,9 @@ div.imgBackground {
     body {
         max-width: 1400px;
         display: grid; */
-        /* grid-template-rows: repeat(10, 10vh);
+/* grid-template-rows: repeat(10, 10vh);
         grid-template-columns: repeat(10, 140px); */
-    }
+}
 }
 
 @media screen and (max-width: 825px) {
@@ -192,10 +215,11 @@ div.imgBackground {
 
     }
 }
+
 @media screen and (max-height: 535px) {
     h1 p {
         font-size: 1rem;
         padding-left: 0;
-    
+
     }
 }
