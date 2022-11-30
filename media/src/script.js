@@ -13,17 +13,18 @@ end of common pages
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++
 display div with texts when click on first img or second img 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-function toggleArticle() {
+function toggleArticle(element) {
     /*display div*/
-    onMouseOver.classList.toggle("visible");
-    /* erasing right content */
+    element.classList.toggle("visible");
+    /* hide right content */
     gridContainerMainArticle1.classList.toggle("invisible");
     gridContainerMainArticle2.classList.toggle("invisible");
     };
+
 /* declaring variables*/
     /* img class click */
-const whoIAm = document.querySelector("#who-i-am");
-const matos = document.querySelector("#matos");
+const firsImgPrez = document.querySelector("#first-img-prez");
+const secondImgPrez = document.querySelector("#second-img-prez");
     /*articles extent contents  */
 const onMouseOver = document.querySelector(".on-mouseOver");
 const onMouseOver2 = document.querySelector(".on-mouseOver2");
@@ -38,20 +39,27 @@ const gridContainerMainArticle2 = document.querySelector(
 
 
 /* listening actions first article (click on img)*/
-whoIAm.addEventListener("click", function () {
-    toggleArticle();
+firsImgPrez.addEventListener("click", function () {
+    toggleArticle(onMouseOver);
 });
 /* listening actions second article (click on img)*/
-matos.addEventListener("click", function () {
-  onMouseOver2.classList.toggle("visible");
+secondImgPrez.addEventListener("click", function () {
+    toggleArticle(onMouseOver2);
 });
 /* end of display div when click on first img or second img */
-/*close div*/
-const btnCloseDiv = document.querySelector(".btn-close-div");
-btnCloseDiv.addEventListener("click", function () {
-    toggleArticle();
-});
 
+
+/* closing windows extent content via button x */ 
+/* 1e div */
+const btn1CloseDiv = document.querySelector("#btn1-close-div");
+btn1CloseDiv.addEventListener("click", function () {
+    toggleArticle(onMouseOver);
+});
+/* 2e div */
+const btn2CloseDiv = document.querySelector('#btn2-close-div');
+btn2CloseDiv.addEventListener("click", function(){
+    toggleArticle(onMouseOver2);
+});
 
  /* =====================================================
  end of page presentation.html 

@@ -124,7 +124,9 @@ li {
     width: 1.5rem;
     height: 1.5rem;
 }
-
+.mouseOverImg-cursor:hover{
+cursor: pointer;
+}
 /*================ end of common pages ==================*/
 
 /*=======================index page======================*/
@@ -282,6 +284,9 @@ div.imgBackground {
     grid-area: 3/4/10/10;
     display: flex;
     flex-direction: column;
+    background-color: var(--colorTheme1);
+    border-radius:10px ;
+    padding: 1em;
 }
 
 .visible p {
@@ -294,6 +299,7 @@ div.imgBackground {
 .invisible{
     display: none;
 }
+
 /*=============end of presentation page=====================*/
 
 /*==========================Media queries:=============*/
