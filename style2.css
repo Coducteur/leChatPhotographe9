@@ -17,10 +17,10 @@ font-family: 'Rubik Microbe', cursive;
 :root {
     /*themes couleurs*/
     --colorDark: #07020D;
-    --colorLight: #ffffff63;
+    --colorLight: #ffffff48;
     --colorTheme1: #bd6b4250;
     --colorTheme2: #2a7f635e;
-    --colorTheme3: #e4e4e44e;
+    --colorTheme3: #e4e4e49d;
 
     /*Breakpoint*/
     --breakpointCellPhone: 412px;
@@ -34,6 +34,7 @@ font-family: 'Rubik Microbe', cursive;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+
 }
 
 body {
@@ -63,7 +64,7 @@ body {
 }
 
 .gridContainer-sectionRight {
-    grid-area: 3/4/10/11;
+    grid-area: 3/4/10/10;
 }
 
 .gridContainer-Footer {
@@ -154,9 +155,15 @@ div.imgBackground {
 
 .background-mainIndex {
     border-radius: 5px;
+    color: var(--colorTheme);
     background-color: var(--colorTheme3);
     max-height: 100%;
+    scrollbar-width: none;
     overflow-y: scroll;
+}
+
+.background-mainIndex::-webkit-scrollbar {
+    width: 0;
 }
 
 /*==================end of index page======================*/
@@ -173,23 +180,27 @@ div.imgBackground {
     height: 100%;
 }
 
-.gridContainer-mainArticle1 {
+/* .gridContainer-mainArticle1 {
     grid-area: 3/4/6/10;
-}
+} */
 
-.gridContainer-mainArticle1:hover {
+/* .gridContainer-mainArticle1:hover {
     background-color: var(--colorTheme3);
-    
-}
 
-.gridContainer-mainArticle2 {
+} */
+
+/* .gridContainer-mainArticle2 {
     grid-area: 6/4/9/10;
-}
+} */
 
 .gridContainer-mainArticle1 div img,
 .gridContainer-mainArticle2 div img {
     width: 100px;
     height: auto;
+}
+
+.gridContainer-Prez {
+    
 }
 
 .flex-containerPrez {
@@ -202,6 +213,22 @@ div.imgBackground {
     margin: 20px;
 }
 
+.on-mouseOver, .on-mouseOver2 {
+    display: none;
+
+
+}
+
+.visible {
+    display: flex;
+    flex-direction: column;
+    
+    grid-area: 3/4/10/10.
+}
+
+.visible h2, .visible p {
+    margin: 10px;
+}
 
 /*=============end of presentation page=====================*/
 
