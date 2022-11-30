@@ -7,8 +7,11 @@ const matos = document.querySelector('#matos')
 const onMouseOver2 = document.querySelector('.on-mouseOver2')
 
 whoIAm.addEventListener("click", function () {
+    /*display div*/
     onMouseOver.classList.toggle("visible");
+    /* erasing right content */
     
+
 });
 matos.addEventListener("click", function () {
     onMouseOver2.classList.toggle("visible");
