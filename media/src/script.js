@@ -8,6 +8,7 @@ const onMouseOver2 = document.querySelector('.on-mouseOver2')
 
 whoIAm.addEventListener("click", function () {
     onMouseOver.classList.toggle("visible");
+    
 });
 matos.addEventListener("click", function () {
     onMouseOver2.classList.toggle("visible");
