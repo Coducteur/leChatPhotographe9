@@ -124,9 +124,11 @@ li {
     width: 1.5rem;
     height: 1.5rem;
 }
-.mouseOverImg-cursor:hover{
-cursor: pointer;
+
+.mouseOverImg-cursor:hover {
+    cursor: pointer;
 }
+
 /*================ end of common pages ==================*/
 
 /*=======================index page======================*/
@@ -265,7 +267,19 @@ div.imgBackground {
     justify-content: space-between;
     align-content: center;
     padding: 1em;
-    margin-top: 10px;
+  }
+
+#matos-photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#matos-photos img{
+    height: 150px;
+}
+#matos-photos img:hover{
+    height: auto;
+    position: absolute;
 }
 
 .btn-close-div {
@@ -273,7 +287,7 @@ div.imgBackground {
     border: none;
     padding: 10px 18px;
     text-align: center;
-    
+
     text-decoration: none;
     display: inline-block;
     font-size: 2em;
@@ -284,19 +298,20 @@ div.imgBackground {
     grid-area: 3/4/10/10;
     display: flex;
     flex-direction: column;
-    background-color: var(--colorTheme1);
-    border-radius:10px ;
+    /* background-color: var(--colorTheme1); */
+    border-radius: 10px;
     padding: 1em;
 }
 
 .visible p {
-    padding: 1.5em;
+    padding: 1em;
 }
 
 .align-right {
     text-align: right;
 }
-.invisible{
+
+.invisible {
     display: none;
 }
 
