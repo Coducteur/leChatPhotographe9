@@ -191,6 +191,7 @@ div.imgBackground {
 .grid--galleries img {
     width: 100%;
     height: auto;
+    
 }
 
 .grid-photo1 {
@@ -215,6 +216,14 @@ div.imgBackground {
 
 .div6 {
     grid-area: 1 / 5 / 4 / 7;
+}
+
+.gridContainer-subMenu ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 100%;
 }
 
 /*==================end of Galleries pages======================*/
@@ -285,8 +294,8 @@ div.imgBackground {
 }
 
 .matos-photos img:hover {
-    /* transform: scale(1.5); */
-    /* transition: 1s; */
+    /* transform: scale(1); */
+    transition: 0s;
     /* position: absolute; */
     /* height: auto; */
 }
