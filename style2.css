@@ -71,13 +71,17 @@ body {
     grid-area: 10/1/11/3;
 }
 
+.gridContainer-subMenu {
+    grid-area: 1/4/3/10;
+}
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* ++++++ end of main common zones grid area ++++++ */
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-h1 p {
+h1 {
     font-family: 'Rubik Microbe', cursive;
     font-size: 2rem;
     padding-left: 15px;
@@ -93,6 +97,7 @@ h1 p {
 
 .main-Nav li a {
     padding-left: 35px;
+    transition: 2.5s;
 
 }
 
@@ -267,19 +272,23 @@ div.imgBackground {
     justify-content: space-between;
     align-content: center;
     padding: 1em;
-  }
+}
 
-#matos-photos {
+.matos-photos {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#matos-photos img{
-    height: 150px;
+
+.matos-photos img {
+    height: 200px;
 }
-#matos-photos img:hover{
-    height: auto;
-    position: absolute;
+
+.matos-photos img:hover {
+    /* transform: scale(1.5); */
+    /* transition: 1s; */
+    /* position: absolute; */
+    /* height: auto; */
 }
 
 .btn-close-div {
@@ -314,6 +323,13 @@ div.imgBackground {
 .invisible {
     display: none;
 }
+
+.flex-positionning-prez {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 
 /*=============end of presentation page=====================*/
 
