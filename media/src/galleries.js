@@ -53,7 +53,7 @@ const animals = [];
 for (let i = 1; i <= 28; i++) {
   animals.push({
     name: `animals(${i})`,
-    url: `./media/img_maxRez/animaux/animals(${i})`,
+    url: `./media/img_maxRez/animaux/animals(${i}).jpg`,
     alt: `image d'un animal`,
   });
 }
@@ -64,7 +64,7 @@ const cars = [];
 for (let i = 1; i <= 28; i++) {
   cars.push({
     name: `cars(${i})`,
-    url: `./media/img_maxRez/auto/cars(${i})`,
+    url: `./media/img_maxRez/auto/cars(${i}).jpg`,
     alt: `image d'une voiture`,
   });
 }
@@ -75,7 +75,7 @@ const nb = [];
 for (let i = 1; i <= 10; i++) {
   nb.push({
     name: `nb(${i})`,
-    url: `./media/img_maxRez/N&B/nb(${i})`,
+    url: `./media/img_maxRez/N&B/nb(${i}).jpg`,
     alt: `image en noir et blanc`,
   });
 }
@@ -86,7 +86,7 @@ const paysage = [];
 for (let i = 1; i <= 7; i++) {
   paysage.push({
     name: `paysage(${i})`,
-    url: `./media/img_maxRez/paysage/paysage(${i})`,
+    url: `./media/img_maxRez/paysage/paysage(${i}).jpg`,
     alt: `image d'un paysage`,
   });
 }
@@ -100,8 +100,58 @@ for (let i = 1; i <= 17; i++) {
     alt: `image du spitzberg`,
   });
 }
-console.log(animals);
+// console.log(animals);
 // console.log(cars);
 // console.log(nb);
 // console.log(paysage);
 // console.log(spitzberg);
+
+/* 
+
+==============================================================
+|             |              sub                             |
+|             |                 menu                         |
+| ============| =============================================|
+|             |                                              |
+|             |                                              |
+|             |                                              |
+|             |                                              |
+|             |        large                                 |
+|             |              display                         |
+|             |                     Area                     |
+|             |                                              |
+|             |                                              |
+|             |                                              |
+|             |                                              |
+|             |                                              |
+|=============| =============================================|
+|             |   all     small                              |
+|             |                pictures  carousel            |
+==============================================================
+
+*/
+/* 
+générating small pictures for 1 gallery's pictures:
+
+first we're adding each pictures in the small section area (pictures carousel)
+then we listen the mouse click for each pictures. If click, then show the picture in the large display area.
+
+*/
+// gallery animals (default gallery)
+let animalsGal = document.querySelector(".animalsGal");
+for (let i = 0; i < animals.length; i++) {
+  let newPic = document.createElement("img");
+  newPic.src = animals[i].url;
+  newPic.classList = "newImg";
+  newPic.id = animals[i].name;
+  newPic.alt = animals[i].alt;
+  animalsGal.appendChild(newPic);
+}
+
+let newImg = document.querySelector('.newImg'), 
+    test = document.querySelector('.test');
+    
+  newImg.addEventListener('click', function() {
+   
+    test.appendChild(newImg);
+  })

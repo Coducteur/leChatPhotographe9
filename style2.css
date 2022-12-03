@@ -75,8 +75,9 @@ body {
     grid-area: 1/4/3/10;
     padding: 10px;
 }
-.gridContainer-carousel{
-    grid-area: 9/3/11/11;
+
+.gridContainer-carousel {
+    grid-area: 2/10/10/11;
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -137,6 +138,7 @@ li {
 .mouseOverImg-cursor:hover {
     cursor: pointer;
 }
+
 /*=====================================================
 ================ end of common pages ==================
 =======================================================*/
@@ -190,44 +192,7 @@ div.imgBackground {
 /*====================================================
 ==================Galleries pages=====================
 ====================================================*/
-.grid--galleries {
-    display: grid;
-    height: 100%;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
 
-.grid--galleries img {
-    width: 100%;
-    height: auto;
-
-}
-
-/* .grid-photo1 {
-    grid-area: 1 / 1 / 3 / 3;
-}
-
-.grid-photo2 {
-    grid-area: 3 / 1 / 6 / 3;
-}
-
-.grid-photo3 {
-    grid-area: 1 / 3 / 4 / 5;
-}
-
-.grid-photo4 {
-    grid-area: 4 / 3 / 6 / 5;
-}
-
-.grid-photo5 {
-    grid-area: 1 / 5 / 6 / 7;
-}
-
-.div6 {
-    grid-area: 1 / 5 / 4 / 7;
-} */
 
 .gridContainer-subMenu ul {
     display: flex;
@@ -235,6 +200,28 @@ div.imgBackground {
     flex-wrap: wrap;
     align-content: center;
     height: 100%;
+}
+
+.test {
+    width: 100%;
+    height: 100%;
+}
+
+.test img {
+    width: 90%;
+    height: auto;
+}
+
+.carousel {
+    height: 100%;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.carousel img {
+    width: 100px;
+    height: auto;
+    padding: 0 5px;
 }
 
 /*============================================================
