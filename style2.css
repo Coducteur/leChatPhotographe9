@@ -73,6 +73,7 @@ body {
 
 .gridContainer-subMenu {
     grid-area: 1/4/3/10;
+    padding: 10px;
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -124,7 +125,7 @@ li {
     flex-direction: column;
 }
 
-/*tailles des icones du footer*/
+/* icones size in footer*/
 .ico_reseaux {
     width: 1.5rem;
     height: 1.5rem;
@@ -133,10 +134,13 @@ li {
 .mouseOverImg-cursor:hover {
     cursor: pointer;
 }
+/*=====================================================
+================ end of common pages ==================
+=======================================================*/
 
-/*================ end of common pages ==================*/
-
-/*=======================index page======================*/
+/*======================================================
+=======================index page=======================
+======================================================*/
 div.imgBackground {
     width: 100%;
     height: 100%;
@@ -175,10 +179,14 @@ div.imgBackground {
     width: 0;
 }
 
-/*==================end of index page======================*/
+/*=======================================================
+==================end of index page======================
+=======================================================*/
 
 
-/*==================Galleries pages=====================*/
+/*====================================================
+==================Galleries pages=====================
+====================================================*/
 .grid--galleries {
     display: grid;
     height: 100%;
@@ -191,7 +199,7 @@ div.imgBackground {
 .grid--galleries img {
     width: 100%;
     height: auto;
-    
+
 }
 
 .grid-photo1 {
@@ -218,7 +226,7 @@ div.imgBackground {
     grid-area: 1 / 5 / 4 / 7;
 }
 
-.gridContainer-subMenu ul{
+.gridContainer-subMenu ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -226,9 +234,14 @@ div.imgBackground {
     height: 100%;
 }
 
-/*==================end of Galleries pages======================*/
+/*============================================================
+==================end of Galleries pages======================
+============================================================*/
 
-/*==================presentation page=====================*/
+/*============================================================
+======================presentation page=======================
+=============================================================*/
+
 .imgBckGrd-Prez {
     background: url(./media/img_maxRez/DSC01649.JPG) left top no-repeat;
     background-size: cover;
@@ -239,26 +252,11 @@ div.imgBackground {
     height: 100%;
 }
 
-/* .gridContainer-mainArticle1 {
-    grid-area: 3/4/6/10;
-} */
-
-/* .gridContainer-mainArticle1:hover {
-    background-color: var(--colorTheme3);
-
-} */
-
-/* .gridContainer-mainArticle2 {
-    grid-area: 6/4/9/10;
-} */
-
 .gridContainer-mainArticle1 div img,
 .gridContainer-mainArticle2 div img {
     width: 100px;
     height: auto;
 }
-
-/* .gridContainer-Prez {} */
 
 .flex-containerPrez {
     display: flex;
@@ -283,21 +281,11 @@ div.imgBackground {
     padding: 1em;
 }
 
-.matos-photos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.matos-photos img {
+.photos-presentation img {
     height: 200px;
-}
-
-.matos-photos img:hover {
-    /* transform: scale(1); */
-    transition: 0s;
-    /* position: absolute; */
-    /* height: auto; */
+    float: left;
+    ;
+    padding-right: 20px;
 }
 
 .btn-close-div {
@@ -322,7 +310,8 @@ div.imgBackground {
 }
 
 .visible p {
-    padding: 1em;
+    padding: 1.2em;
+    line-height: 1.5em;
 }
 
 .align-right {
@@ -334,15 +323,22 @@ div.imgBackground {
 }
 
 .flex-positionning-prez {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 
-/*=============end of presentation page=====================*/
 
-/*==========================Media queries:=============*/
+/*================================================================
+=============end of presentation page=============================
+=================================================================*/
+
+/******************************************************************
+************************** Media queries: *************************
+******************************************************************/
+
 /* @media screen and (min-width: 1400px) {
     body {
         max-width: 1400px;
@@ -361,8 +357,6 @@ div.imgBackground {
 
     h1 p {
         font-size: 2rem;
-
-
     }
 }
 
