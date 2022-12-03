@@ -48,10 +48,10 @@ explications for inserting pictures in the html pages are belows.
 */
 
 // creating array "animals"
-const animals = [];
+const animalsArray = [];
 
 for (let i = 1; i <= 28; i++) {
-  animals.push({
+  animalsArray.push({
     name: `animals(${i})`,
     url: `./media/img_maxRez/animaux/animals(${i}).jpg`,
     alt: `image d'un animal`,
@@ -59,10 +59,10 @@ for (let i = 1; i <= 28; i++) {
 }
 
 // creating array "cars"
-const cars = [];
+const carsArray = [];
 
 for (let i = 1; i <= 28; i++) {
-  cars.push({
+  carsArray.push({
     name: `cars(${i})`,
     url: `./media/img_maxRez/auto/cars(${i}).jpg`,
     alt: `image d'une voiture`,
@@ -70,33 +70,33 @@ for (let i = 1; i <= 28; i++) {
 }
 
 // creating array "nb"
-const nb = [];
+const nbArray = [];
 
 for (let i = 1; i <= 10; i++) {
-  nb.push({
+  nbArray.push({
     name: `nb(${i})`,
-    url: `./media/img_maxRez/N&B/nb(${i}).jpg`,
+    url: `./media/img_maxRez/N&B/n&b(${i}).jpg`,
     alt: `image en noir et blanc`,
   });
 }
 
 // creating array "paysage"
-const paysage = [];
+const paysageArray = [];
 
 for (let i = 1; i <= 7; i++) {
-  paysage.push({
+  paysageArray.push({
     name: `paysage(${i})`,
     url: `./media/img_maxRez/paysage/paysage(${i}).jpg`,
     alt: `image d'un paysage`,
   });
 }
 // creating array "cars"
-const spitzberg = [];
+const spitzbergArray = [];
 
 for (let i = 1; i <= 17; i++) {
-  spitzberg.push({
+  spitzbergArray.push({
     name: `spitzberg(${i})`,
-    url: `./media/img_maxRez/spitzberg/spitzberg(${i})`,
+    url: `./media/img_maxRez/spitzberg/spitzberg(${i}).jpg`,
     alt: `image du spitzberg`,
   });
 }
@@ -138,20 +138,65 @@ then we listen the mouse click for each pictures. If click, then show the pictur
 
 */
 // gallery animals (default gallery)
-let animalsGal = document.querySelector(".animalsGal");
-for (let i = 0; i < animals.length; i++) {
-  let newPic = document.createElement("img");
-  newPic.src = animals[i].url;
-  newPic.classList = "newImg";
-  newPic.id = animals[i].name;
-  newPic.alt = animals[i].alt;
-  animalsGal.appendChild(newPic);
+
+let animalsPicCarousel = document.querySelector(".animalsGal");
+let autoPicCarousel = document.querySelector(".autoGal");
+let nbPicCarousel = document.querySelector(".nbGal");
+let paysagePicCarousel = document.querySelector(".paysageGal");
+let spitzbergPicCarousel = document.querySelector(".spitzbergGal");
+
+if (animalsPicCarousel !== null) {
+  for (let i = 0; i < animalsArray.length; i++) {
+    let newPicAnimals = document.createElement("img");
+    newPicAnimals.src = animalsArray[i].url;
+    newPicAnimals.classList = "newImg";
+    newPicAnimals.id = animalsArray[i].name;
+    newPicAnimals.alt = animalsArray[i].alt;
+    animalsPicCarousel.appendChild(newPicAnimals);
+  }
+} else if (autoPicCarousel !== null) {
+  for (let i = 0; i < carsArray.length; i++) {
+    let newPicAuto = document.createElement("img");
+    newPicAuto.src = carsArray[i].url;
+    newPicAuto.classList = "newImg";
+    newPicAuto.id = carsArray[i].name;
+    newPicAuto.alt = carsArray[i].alt;
+    autoPicCarousel.appendChild(newPicAuto);
+  }
+} else if (nbPicCarousel !== null) {
+  for (let i = 0; i < nbArray.length; i++) {
+    let newPicNB = document.createElement("img");
+    newPicNB.src = nbArray[i].url;
+    newPicNB.classList = "newImg";
+    newPicNB.id = nbArray[i].name;
+    newPicNB.alt = nbArray[i].alt;
+    nbPicCarousel.appendChild(newPicNB);
+  }
+} else if (paysagePicCarousel !== null) {
+  for (let i = 0; i < paysageArray.length; i++) {
+    let newPicPaysage = document.createElement("img");
+    newPicPaysage.src = paysageArray[i].url;
+    newPicPaysage.classList = "newImg";
+    newPicPaysage.id = paysageArray[i].name;
+    newPicPaysage.alt = paysageArray[i].alt;
+    paysagePicCarousel.appendChild(newPicPaysage);
+  }
+} else if (spitzbergPicCarousel !== null) {
+  for (let i = 0; i < spitzbergArray.length; i++) {
+    let newPicSpitzberg = document.createElement("img");
+    newPicSpitzberg.src = spitzbergArray[i].url;
+    newPicSpitzberg.classList = "newImg";
+    newPicSpitzberg.id = spitzbergArray[i].name;
+    newPicSpitzberg.alt = spitzbergArray[i].alt;
+    spitzbergPicCarousel.appendChild(newPicSpitzberg);
+  }
 }
 
-let newImg = document.querySelector('.newImg'), 
-    test = document.querySelector('.test');
-    
-  newImg.addEventListener('click', function() {
-   
-    test.appendChild(newImg);
-  })
+// gallery auto
+
+// let newImg = document.querySelector(".newImg"),
+//   test = document.querySelector(".test");
+
+// newImg.addEventListener("click", function () {
+//   test.appendChild(newImg);
+// });

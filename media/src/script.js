@@ -14,19 +14,19 @@ function toggleArticle(element) {
 }
 
 /* declaring variables*/
-/* img class click */
-const firsImgPrez = document.querySelector("#first-img-prez");
-const secondImgPrez = document.querySelector("#second-img-prez");
-/*articles extent contents  */
-const onMouseOver = document.querySelector(".on-mouseOver");
-const onMouseOver2 = document.querySelector(".on-mouseOver2");
-/* variables for show or hide extent content*/
-const gridContainerMainArticle1 = document.querySelector(
-  ".gridContainer-mainArticle1"
-);
-const gridContainerMainArticle2 = document.querySelector(
-  ".gridContainer-mainArticle2"
-);
+// img class click (x2)
+// articles extent contents (x2)
+// variables for show or hide extent content (x2)
+const firsImgPrez = document.querySelector("#first-img-prez"),
+  secondImgPrez = document.querySelector("#second-img-prez"),
+  onMouseOver = document.querySelector(".on-mouseOver"),
+  onMouseOver2 = document.querySelector(".on-mouseOver2"),
+  gridContainerMainArticle1 = document.querySelector(
+    ".gridContainer-mainArticle1"
+  ),
+  gridContainerMainArticle2 = document.querySelector(
+    ".gridContainer-mainArticle2"
+  );
 
 /* listening actions first article (click on img)*/
 firsImgPrez.addEventListener("click", function () {
@@ -39,12 +39,12 @@ secondImgPrez.addEventListener("click", function () {
 /* end of display div when click on first img or second img */
 
 /* closing windows extent content via button x */
-/* 1e div */
+/* 1st div */
 const btn1CloseDiv = document.querySelector("#btn1-close-div");
 btn1CloseDiv.addEventListener("click", function () {
   toggleArticle(onMouseOver);
 });
-/* 2e div */
+/* 2de div */
 const btn2CloseDiv = document.querySelector("#btn2-close-div");
 btn2CloseDiv.addEventListener("click", function () {
   toggleArticle(onMouseOver2);
