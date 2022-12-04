@@ -16,7 +16,7 @@ we're adding each picture in the array as an object with:
   
 loop for: i = number of the picture in the directory 
 >> the i argument = lenght of the array and must be changed if adding some new pictures.
-be carefull of the first number (1 or 0)
+be carefull of the first number with the name of your first picture(1 or 0)
 
 you will have an array like this:
 
@@ -26,22 +26,7 @@ name_of_array [
     url: `./media/img_maxRez/subDirectory/namePicture(number1)`,
     alt: `some alt you give for all pictures`,
   }
-  {
-    name: namePicture(number2):
-    url: `./media/img_maxRez/subDirectory/namePicture(number2)`,
-    alt: `some alt you give for all pictures`,
-  }
-  {
-    name: namePicture(number3):
-    url: `./media/img_maxRez/subDirectory/namePicture(number3)`,
-    alt: `some alt you give for all pictures`,
-  }
-  {
-    name: namePicture(number4):
-    url: `./media/img_maxRez/subDirectory/namePicture(number4)`,
-    alt: `some alt you give for all pictures`,
-  }
-  ...
+ ... (X number of photos)
 ]
 
 explications for inserting pictures in the html pages are belows.
@@ -108,88 +93,62 @@ for (let i = 1; i <= 17; i++) {
 
 /* 
 
-==============================================================
-|             |              sub                             |
-|             |                 menu                         |
-| ============| =============================================|
-|             |                                              |
-|             |                                              |
-|             |                                              |
-|             |                                              |
-|             |        large                                 |
-|             |              display                         |
-|             |                     Area                     |
-|             |                                              |
-|             |                                              |
-|             |                                              |
-|             |                                              |
-|             |                                              |
-|=============| =============================================|
-|             |   all     small                              |
-|             |                pictures  carousel            |
-==============================================================
+=======================================================================
+|             |              sub                                      |
+|             |                 menu                                  |
+| ============| =============================================|========|
+|             |                                              |        |
+|             |                                              | small  |
+|             |                                              |  img   |
+|             |                                              |        |
+|             |        large                                 |   in   |
+|             |              display                         |carousel|
+|             |                     Area                     |        |
+|             |                                              |        |
+|             |                                              |        |
+|             |                                              |        |
+|             |                                              |        |
+|             |                                              |        |
+|=============|=======================================================|
+|             |                                                       |
+|             |                                                       | =======================================================================
 
 */
 /* 
 générating small pictures for 1 gallery's pictures:
 
-first we're adding each pictures in the small section area (pictures carousel)
-then we listen the mouse click for each pictures. If click, then show the picture in the large display area.
-
+first 
+then we test on witch page of galleries we're on
+and we're adding each pictures in the small section area (pictures carousel)
 */
-// gallery animals (default gallery)
 
 let animalsPicCarousel = document.querySelector(".animalsGal");
-let autoPicCarousel = document.querySelector(".autoGal");
-let nbPicCarousel = document.querySelector(".nbGal");
-let paysagePicCarousel = document.querySelector(".paysageGal");
-let spitzbergPicCarousel = document.querySelector(".spitzbergGal");
+   (autoPicCarousel = document.querySelector(".autoGal")),
+   (nbPicCarousel = document.querySelector(".nbGal")),
+   (paysagePicCarousel = document.querySelector(".paysageGal")),
+   (spitzbergPicCarousel = document.querySelector(".spitzbergGal"));
+
+function addingImgCarrousel(nameOfGalleryCarousel, nameOfArray) {
+  for (let i = 0; i < nameOfArray.length; i++) {
+    let newPicInCarousel = document.createElement("img");
+    newPicInCarousel.src = nameOfArray[i].url;
+    newPicInCarousel.classList = "newImg";
+    newPicInCarousel.id = nameOfArray[i].name;
+    newPicInCarousel.alt = nameOfArray[i].alt;
+    nameOfGalleryCarousel.appendChild(newPicInCarousel);
+  }
+}
 
 if (animalsPicCarousel !== null) {
-  for (let i = 0; i < animalsArray.length; i++) {
-    let newPicAnimals = document.createElement("img");
-    newPicAnimals.src = animalsArray[i].url;
-    newPicAnimals.classList = "newImg";
-    newPicAnimals.id = animalsArray[i].name;
-    newPicAnimals.alt = animalsArray[i].alt;
-    animalsPicCarousel.appendChild(newPicAnimals);
-  }
+  addingImgCarrousel(animalsPicCarousel, animalsArray);
 } else if (autoPicCarousel !== null) {
-  for (let i = 0; i < carsArray.length; i++) {
-    let newPicAuto = document.createElement("img");
-    newPicAuto.src = carsArray[i].url;
-    newPicAuto.classList = "newImg";
-    newPicAuto.id = carsArray[i].name;
-    newPicAuto.alt = carsArray[i].alt;
-    autoPicCarousel.appendChild(newPicAuto);
-  }
+  addingImgCarrousel(autoPicCarousel, carsArray);
 } else if (nbPicCarousel !== null) {
-  for (let i = 0; i < nbArray.length; i++) {
-    let newPicNB = document.createElement("img");
-    newPicNB.src = nbArray[i].url;
-    newPicNB.classList = "newImg";
-    newPicNB.id = nbArray[i].name;
-    newPicNB.alt = nbArray[i].alt;
-    nbPicCarousel.appendChild(newPicNB);
-  }
+  addingImgCarrousel(nbPicCarousel, nbArray);
 } else if (paysagePicCarousel !== null) {
-  for (let i = 0; i < paysageArray.length; i++) {
-    let newPicPaysage = document.createElement("img");
-    newPicPaysage.src = paysageArray[i].url;
-    newPicPaysage.classList = "newImg";
-    newPicPaysage.id = paysageArray[i].name;
-    newPicPaysage.alt = paysageArray[i].alt;
-    paysagePicCarousel.appendChild(newPicPaysage);
-  }
+  addingImgCarrousel(paysagePicCarousel, paysageArray);
 } else if (spitzbergPicCarousel !== null) {
-  for (let i = 0; i < spitzbergArray.length; i++) {
-    let newPicSpitzberg = document.createElement("img");
-    newPicSpitzberg.src = spitzbergArray[i].url;
-    newPicSpitzberg.classList = "newImg";
-    newPicSpitzberg.id = spitzbergArray[i].name;
-    newPicSpitzberg.alt = spitzbergArray[i].alt;
-    spitzbergPicCarousel.appendChild(newPicSpitzberg);
-  }
+  addingImgCarrousel(spitzbergPicCarousel, spitzbergArray);
 }
 
 // gallery auto

@@ -64,7 +64,9 @@ body {
 }
 
 .gridContainer-sectionRight {
-    grid-area: 3/4/9/10;
+    grid-area: 3/3/9/10;
+    border: #07020D solid 2px;
+    border-radius: 5%;
 }
 
 .gridContainer-Footer {
