@@ -123,16 +123,16 @@ and we're adding each pictures in the small section area (pictures carousel)
 */
 
 let animalsPicCarousel = document.querySelector(".animalsGal");
-   (autoPicCarousel = document.querySelector(".autoGal")),
-   (nbPicCarousel = document.querySelector(".nbGal")),
-   (paysagePicCarousel = document.querySelector(".paysageGal")),
-   (spitzbergPicCarousel = document.querySelector(".spitzbergGal"));
+(autoPicCarousel = document.querySelector(".autoGal")),
+  (nbPicCarousel = document.querySelector(".nbGal")),
+  (paysagePicCarousel = document.querySelector(".paysageGal")),
+  (spitzbergPicCarousel = document.querySelector(".spitzbergGal"));
 
 function addingImgCarrousel(nameOfGalleryCarousel, nameOfArray) {
   for (let i = 0; i < nameOfArray.length; i++) {
     let newPicInCarousel = document.createElement("img");
     newPicInCarousel.src = nameOfArray[i].url;
-    newPicInCarousel.classList = "newImg";
+    newPicInCarousel.classList = "picToDisplayFullRes";
     newPicInCarousel.id = nameOfArray[i].name;
     newPicInCarousel.alt = nameOfArray[i].alt;
     nameOfGalleryCarousel.appendChild(newPicInCarousel);
@@ -151,11 +151,11 @@ if (animalsPicCarousel !== null) {
   addingImgCarrousel(spitzbergPicCarousel, spitzbergArray);
 }
 
-// gallery auto
+let picToDisplayFullRes = document.querySelector(".picToDisplayFullRes"),
+  test = document.querySelector(".test");
 
-// let newImg = document.querySelector(".newImg"),
-//   test = document.querySelector(".test");
+picToDisplayFullRes.addEventListener("click", function (event) {
+  event.preventDefault();
 
-// newImg.addEventListener("click", function () {
-//   test.appendChild(newImg);
-// });
+  test.appendChild(picToDisplayFullRes);
+});
