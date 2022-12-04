@@ -111,17 +111,15 @@ for (let i = 1; i <= 17; i++) {
 |             |                                              |        |
 |=============|=======================================================|
 |             |                                                       |
-|             |                                                       | =======================================================================
+|             |                                                       | 
+=======================================================================
 
 */
 /* 
 générating small pictures for 1 gallery's pictures:
-
-first 
-then we test on witch page of galleries we're on
-and we're adding each pictures in the small section area (pictures carousel)
 */
 
+// we're adding each pictures in the small section area (pictures carousel)
 let animalsPicCarousel = document.querySelector(".animalsGal");
 (autoPicCarousel = document.querySelector(".autoGal")),
   (nbPicCarousel = document.querySelector(".nbGal")),
@@ -132,30 +130,62 @@ function addingImgCarrousel(nameOfGalleryCarousel, nameOfArray) {
   for (let i = 0; i < nameOfArray.length; i++) {
     let newPicInCarousel = document.createElement("img");
     newPicInCarousel.src = nameOfArray[i].url;
-    newPicInCarousel.classList = "picToDisplayFullRes";
     newPicInCarousel.id = nameOfArray[i].name;
     newPicInCarousel.alt = nameOfArray[i].alt;
+    newPicInCarousel.classList = "imgGenerate"
     nameOfGalleryCarousel.appendChild(newPicInCarousel);
   }
 }
 
+/* show pictures in the main "large display area" */
+function showPictureLarge(nameOfArray) {
+  let mainDisplay = document.querySelector(".mainDisplay"),
+    displayFullRes = document.createElement("img"),
+    number = 0;
+  //
+  displayFullRes.src = nameOfArray[number].url;
+  mainDisplay.appendChild(displayFullRes);
+
+  function changingPictures() {
+    if (number++ >= nameOfArray.length) {
+      number = 0;
+    }
+    // if (click sur img ){
+    //   number = la valeur de img cliqkée ;
+    // }
+    displayFullRes.src = nameOfArray[number].url;
+    mainDisplay.appendChild(displayFullRes);
+  }
+  setInterval(changingPictures, 5000);
+
+
+}
+//en attente après commit:
+// function listeningClickOnPic() {
+//   const test = document.querySelectorAll('.imgGenerate');
+//   console.log("test=" + test);
+//   console.log(test[2])
+// test.addEventListener("click", function (event) {
+// })
+// }
+
+// we test on witch page of galleries we're on
+// then 1st: small pictures in column to générate.
+// and 2st: large pictures with 5s before changing.
 if (animalsPicCarousel !== null) {
   addingImgCarrousel(animalsPicCarousel, animalsArray);
+  showPictureLarge(animalsArray);
+  // listeningClickOnPic()
 } else if (autoPicCarousel !== null) {
   addingImgCarrousel(autoPicCarousel, carsArray);
+  showPictureLarge(carsArray);
 } else if (nbPicCarousel !== null) {
   addingImgCarrousel(nbPicCarousel, nbArray);
+  showPictureLarge(nbArray);
 } else if (paysagePicCarousel !== null) {
   addingImgCarrousel(paysagePicCarousel, paysageArray);
+  showPictureLarge(paysageArray);
 } else if (spitzbergPicCarousel !== null) {
   addingImgCarrousel(spitzbergPicCarousel, spitzbergArray);
+  showPictureLarge(spitzbergArray);
 }
-
-let picToDisplayFullRes = document.querySelector(".picToDisplayFullRes"),
-  test = document.querySelector(".test");
-
-picToDisplayFullRes.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  test.appendChild(picToDisplayFullRes);
-});
