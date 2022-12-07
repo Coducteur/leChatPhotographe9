@@ -150,54 +150,68 @@ function showPictureLarge(nameOfArray) {
   setInterval(changingPictures, 5000);
 }
 
+function closeBtn() {
+  const divFullScreen = document.querySelector(".fullScreen");
+  const closeBtn = document.createElement("button");
+  closeBtn.type = "button";
+  closeBtn.class = "closeBtn";
+  closeBtn.id = "closeBtnPic";
+  closeBtn.value = "close Picture";
+  divFullScreen.appendChild(closeBtn);
+  closeBtn.innerHTML = "Fermer";
+}
+
+/* function: show small picture in full screen.*/
+
+function showPicFS(nameOfArray) {
+  const largePic = document.querySelectorAll(".imgGenerate");
+  const divFullScreen = document.querySelector(".fullScreen");
+  for (let index = 0; index < largePic.length; index++) {
+    largePic[index].onclick = function () {
+      let exist = document.querySelector(".exist");
+      console.log(exist);
+      if (exist === null) {
+        const imgDivFullScreen = document.createElement("img");
+        imgDivFullScreen.src = nameOfArray[index].url;
+        imgDivFullScreen.alt = nameOfArray[index].alt;
+        imgDivFullScreen.id = nameOfArray[index].name;
+        imgDivFullScreen.classList.add("divFullScreen");
+        divFullScreen.appendChild(imgDivFullScreen);
+        divFullScreen.style.zIndex = "10000";
+        imgDivFullScreen.classList.add("exist");
+        exist = document.querySelector(".exist");
+        closeBtn();
+      } else {
+        exist = document.querySelector(".exist");
+        divFullScreen.style.zIndex = "-10000";
+        exist.remove();
+      }
+    };
+  }
+}
+
 // we test on witch page of galleries we're on
 // then 1st: small pictures in column to générate.
-// and 2st: large pictures with 5s before changing.
+// 2st: large pictures with 5s before changing in large display zone
+// and 3st: click on small pic on the right show the picture un full screen. re click to close the pic un full screen.
 if (animalsPicCarousel !== null) {
   addingImgCarrousel(animalsPicCarousel, animalsArray);
   showPictureLarge(animalsArray);
-  // listeningClickOnPic()
+  showPicFS(animalsArray);
 } else if (autoPicCarousel !== null) {
   addingImgCarrousel(autoPicCarousel, carsArray);
   showPictureLarge(carsArray);
+  showPicFS(carsArray);
 } else if (nbPicCarousel !== null) {
   addingImgCarrousel(nbPicCarousel, nbArray);
   showPictureLarge(nbArray);
+  showPicFS(nbArray);
 } else if (paysagePicCarousel !== null) {
   addingImgCarrousel(paysagePicCarousel, paysageArray);
   showPictureLarge(paysageArray);
+  showPicFS(paysageArray);
 } else if (spitzbergPicCarousel !== null) {
   addingImgCarrousel(spitzbergPicCarousel, spitzbergArray);
   showPictureLarge(spitzbergArray);
-}
-
-const largePic = document.querySelectorAll(".imgGenerate");
-console.log(largePic);
-// let result
-
-const divFullScreen = document.querySelector(".fullScreen");
-
-for (let index = 0; index < largePic.length; index++) {
-  largePic[index].onclick = function () {
-    let exist = document.querySelector(".exist");
-    console.log(exist);
-    if (exist === null) {
-      const imgDivFullScreen = document.createElement("img");
-      imgDivFullScreen.src = paysageArray[index].url;
-      imgDivFullScreen.alt = paysageArray[index].alt;
-      imgDivFullScreen.id = paysageArray[index].name;
-      imgDivFullScreen.classList.add("divFullScreen");
-      divFullScreen.appendChild(imgDivFullScreen);
-      divFullScreen.style.zIndex = "10000";
-      imgDivFullScreen.classList.add("exist");
-
-      exist = document.querySelector(".exist");
-      console.log(exist);
-    } else {
-      console.log("ca marche pas");
-      exist = document.querySelector(".exist");
-      divFullScreen.style.zIndex = "-10000";
-      exist.remove();
-    }
-  };
+  showPicFS(spitzbergArray);
 }

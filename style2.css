@@ -86,19 +86,6 @@ body {
   grid-area: 2/10/10/11;
 }
 
-.fullScreen {
-  grid-area: 1/1/11/10;
-  background-color: white;
-  z-index: -1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.fullScreen img {
-  width: auto;
-  height: 95%;
-}
-.mainDisplay
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* ++++++ end of main common zones grid area ++++++ */
@@ -208,8 +195,6 @@ li {
 }
 
 .mainDisplay {
-  /* width: 100%; */
-  /* height: 100%; */
   display: flex;
   justify-content: center;
 }
@@ -246,6 +231,21 @@ li {
 .carousel img:hover {
   cursor: pointer;
   box-shadow: 2px 5px 10px var(--colorTheme1);
+}
+
+.fullScreen {
+  grid-area: 1/1/11/10;
+  background-color: white;
+  z-index: -1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullScreen img {
+  width: auto;
+  height: 97%;
+  border: black 2px solid;
+  border-radius: 15px;
 }
 
 /*============================================================
@@ -352,7 +352,7 @@ li {
 .contact {
   background-image: url(./media/img_maxRez/contact.jpg);
   height: 60vh;
-  color: var(--colorTheme3);
+  color: var(--colorDark);
   display: flex;
   justify-content: center;
   align-items: center;
