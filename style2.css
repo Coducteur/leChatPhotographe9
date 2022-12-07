@@ -84,8 +84,7 @@ body {
 
 .gridContainer-carousel {
   grid-area: 2/10/10/11;
-  margin-right: ;
-  }
+}
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -214,18 +213,21 @@ li {
   background-image: url("./media/img_maxRez/Film_strip.png");
   background-size: contain;
   overflow-y: scroll;
-  margin-right: 5px;
+  margin-right: 15px;
 }
-.animalsGal, .autoGal, .nbGal, .paysageGal, .spitzbergGal {
+.animalsGal,
+.autoGal,
+.nbGal,
+.paysageGal,
+.spitzbergGal {
   overflow-y: scroll;
 }
 
 .carousel img {
   width: 74%;
   height: auto;
-  margin-left: 20px;
+  margin-left: 15px;
   border: #07020d 3px solid;
-  /* border-bottom: #07020D 5px solid; */
 }
 
 .carousel img:hover {
@@ -329,6 +331,40 @@ li {
 /*================================================================
 =============end of presentation page=============================
 =================================================================*/
+
+/*============================================================
+======================   contact page  =======================
+=============================================================*/
+
+.contact {
+  background-image: url(./media/img_maxRez/contact.jpg);
+  height: 60vh;
+  color: var(--colorTheme3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background-color: rgba(255, 255, 255, 0.224);
+  text-align: center;
+}
+
+.flexContact {
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+}
+.flexContact div,
+.flexContact div p {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+/*============================================================
+==================end of contact   page ======================
+============================================================*/
 
 /******************************************************************
 ************************** Media queries: *************************
