@@ -85,12 +85,6 @@ for (let i = 1; i <= 17; i++) {
     alt: `image du spitzberg`,
   });
 }
-// console.log(animals);
-// console.log(cars);
-// console.log(nb);
-// console.log(paysage);
-// console.log(spitzberg);
-
 /* 
 
 =======================================================================
@@ -132,7 +126,7 @@ function addingImgCarrousel(nameOfGalleryCarousel, nameOfArray) {
     newPicInCarousel.src = nameOfArray[i].url;
     newPicInCarousel.id = nameOfArray[i].name;
     newPicInCarousel.alt = nameOfArray[i].alt;
-    newPicInCarousel.classList = "imgGenerate"
+    newPicInCarousel.classList = "imgGenerate";
     nameOfGalleryCarousel.appendChild(newPicInCarousel);
   }
 }
@@ -147,27 +141,14 @@ function showPictureLarge(nameOfArray) {
   mainDisplay.appendChild(displayFullRes);
 
   function changingPictures() {
-    if (number++ >= nameOfArray.length) {
+    if (number++ >= nameOfArray.length - 1) {
       number = 0;
     }
-    // if (click sur img ){
-    //   number = la valeur de img cliqkée ;
-    // }
     displayFullRes.src = nameOfArray[number].url;
     mainDisplay.appendChild(displayFullRes);
   }
   setInterval(changingPictures, 5000);
-
-
 }
-//en attente après commit:
-// function listeningClickOnPic() {
-//   const test = document.querySelectorAll('.imgGenerate');
-//   console.log("test=" + test);
-//   console.log(test[2])
-// test.addEventListener("click", function (event) {
-// })
-// }
 
 // we test on witch page of galleries we're on
 // then 1st: small pictures in column to générate.
@@ -188,4 +169,35 @@ if (animalsPicCarousel !== null) {
 } else if (spitzbergPicCarousel !== null) {
   addingImgCarrousel(spitzbergPicCarousel, spitzbergArray);
   showPictureLarge(spitzbergArray);
+}
+
+const largePic = document.querySelectorAll(".imgGenerate");
+console.log(largePic);
+// let result
+
+const divFullScreen = document.querySelector(".fullScreen");
+
+for (let index = 0; index < largePic.length; index++) {
+  largePic[index].onclick = function () {
+    let exist = document.querySelector(".exist");
+    console.log(exist);
+    if (exist === null) {
+      const imgDivFullScreen = document.createElement("img");
+      imgDivFullScreen.src = paysageArray[index].url;
+      imgDivFullScreen.alt = paysageArray[index].alt;
+      imgDivFullScreen.id = paysageArray[index].name;
+      imgDivFullScreen.classList.add("divFullScreen");
+      divFullScreen.appendChild(imgDivFullScreen);
+      divFullScreen.style.zIndex = "10000";
+      imgDivFullScreen.classList.add("exist");
+
+      exist = document.querySelector(".exist");
+      console.log(exist);
+    } else {
+      console.log("ca marche pas");
+      exist = document.querySelector(".exist");
+      divFullScreen.style.zIndex = "-10000";
+      exist.remove();
+    }
+  };
 }
