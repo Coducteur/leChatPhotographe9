@@ -275,7 +275,7 @@ function closeBtn() {
   closeBtn.type = "button";
   closeBtn.class = "closeBtn";
   closeBtn.id = "closeBtnPic";
-  closeBtn.style.fontSize = "1.5em";
+  
   insertBtn.appendChild(closeBtn);
   closeBtn.textContent = "<< retour galerie";
 }

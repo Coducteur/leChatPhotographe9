@@ -195,12 +195,14 @@ li {
 }
 
 .mainDisplay {
+  grid-area: 3/3/10/10;
   display: flex;
   justify-content: center;
 }
 
 .mainDisplay img {
   width: auto;
+  max-width: 70vw;
   height: 70vh;
   border: black 2px solid;
   border-radius: 15px;
@@ -244,7 +246,8 @@ li {
 }
 .fullScreen img {
   width: auto;
-  height: 90%;
+  max-width: 90vw;
+  height: 90vh;
   border: black 2px solid;
   border-radius: 15px;
 }
@@ -257,10 +260,11 @@ li {
 }
 
 #closeBtnPic {
-  width: 8em;
+  width: 70%;
+  z-index: 20000;
   border: black 2px solid;
   border-radius: 15px;
-  font-size: 0.1px;
+
   background-color: white;
 }
 
