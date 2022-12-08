@@ -75,7 +75,7 @@ for (let i = 1; i <= 7; i++) {
     alt: `image d'un paysage`,
   });
 }
-// creating array "cars"
+// creating array "spitzberg"
 const spitzbergArray = [];
 
 for (let i = 1; i <= 17; i++) {
@@ -114,104 +114,115 @@ générating small pictures for 1 gallery's pictures:
 */
 
 // we're adding each pictures in the small section area (pictures carousel)
-let animalsPicCarousel = document.querySelector(".animalsGal");
-(autoPicCarousel = document.querySelector(".autoGal")),
-  (nbPicCarousel = document.querySelector(".nbGal")),
-  (paysagePicCarousel = document.querySelector(".paysageGal")),
-  (spitzbergPicCarousel = document.querySelector(".spitzbergGal"));
+let animalsSmallPic = document.querySelector(".animalsGal");
+(autoSmallPic = document.querySelector(".autoGal")),
+  (nbSmallPic = document.querySelector(".nbGal")),
+  (paysageSmallPic = document.querySelector(".paysageGal")),
+  (spitzbergSmallPic = document.querySelector(".spitzbergGal"));
 
-function addingImgCarrousel(nameOfGalleryCarousel, nameOfArray) {
+function addingSmallRightImg(galOfsmallPic, nameOfArray) {
   for (let i = 0; i < nameOfArray.length; i++) {
-    let newPicInCarousel = document.createElement("img");
-    newPicInCarousel.src = nameOfArray[i].url;
-    newPicInCarousel.id = nameOfArray[i].name;
-    newPicInCarousel.alt = nameOfArray[i].alt;
-    newPicInCarousel.classList = "imgGenerate";
-    nameOfGalleryCarousel.appendChild(newPicInCarousel);
+    let newSmallPic = document.createElement("img");
+    newSmallPic.src = nameOfArray[i].url;
+    newSmallPic.id = nameOfArray[i].name;
+    newSmallPic.alt = nameOfArray[i].alt;
+    newSmallPic.classList = "imgGenerate";
+    galOfsmallPic.appendChild(newSmallPic);
   }
 }
 
 /* show pictures in the main "large display area" */
 function showPictureLarge(nameOfArray) {
   let mainDisplay = document.querySelector(".mainDisplay"),
-    displayFullRes = document.createElement("img"),
-    number = 0;
-  //
-  displayFullRes.src = nameOfArray[number].url;
-  mainDisplay.appendChild(displayFullRes);
-
+    displayNormalPic = document.createElement("img"),
+    index = 0;
+  displayNormalPic.src = nameOfArray[index].url;
+  mainDisplay.appendChild(displayNormalPic);
   function changingPictures() {
-    if (number++ >= nameOfArray.length - 1) {
-      number = 0;
+    if (index++ >= nameOfArray.length - 1) {
+      index = 0;
     }
-    displayFullRes.src = nameOfArray[number].url;
-    mainDisplay.appendChild(displayFullRes);
+    displayNormalPic.src = nameOfArray[index].url;
+    mainDisplay.appendChild(displayNormalPic);
   }
   setInterval(changingPictures, 5000);
 }
 
 function closeBtn() {
-  const divFullScreen = document.querySelector(".fullScreen");
+  const insertBtn = document.querySelector(".insertBtn");
   const closeBtn = document.createElement("button");
   closeBtn.type = "button";
   closeBtn.class = "closeBtn";
   closeBtn.id = "closeBtnPic";
   closeBtn.value = "close Picture";
-  divFullScreen.appendChild(closeBtn);
-  closeBtn.innerHTML = "Fermer";
+  closeBtn.style.fontSize = "1.5em";
+  insertBtn.appendChild(closeBtn);
+  closeBtn.classList.add("exist");
+  closeBtn.textContent = "Fermer" + " l'image";
 }
 
-/* function: show small picture in full screen.*/
+/* function: click on picture = show in full screen.*/
 
-function showPicFS(nameOfArray) {
-  const largePic = document.querySelectorAll(".imgGenerate");
+function showPicGiant(nameOfArray) {
+  const GiantPic = document.querySelectorAll(".imgGenerate");
   const divFullScreen = document.querySelector(".fullScreen");
-  for (let index = 0; index < largePic.length; index++) {
-    largePic[index].onclick = function () {
+
+  for (let index = 0; index < GiantPic.length; index++) {
+    GiantPic[index].onclick = function () {
       let exist = document.querySelector(".exist");
-      console.log(exist);
+      // const listenCloseBtn = document.querySelector("#clseBtnPic");
       if (exist === null) {
-        const imgDivFullScreen = document.createElement("img");
-        imgDivFullScreen.src = nameOfArray[index].url;
-        imgDivFullScreen.alt = nameOfArray[index].alt;
-        imgDivFullScreen.id = nameOfArray[index].name;
-        imgDivFullScreen.classList.add("divFullScreen");
-        divFullScreen.appendChild(imgDivFullScreen);
+        const imgGiant = document.createElement("img");
+        imgGiant.src = nameOfArray[index].url;
+        imgGiant.alt = nameOfArray[index].alt;
+        imgGiant.id = nameOfArray[index].name;
+        imgGiant.classList.add("divFullScreen");
+        divFullScreen.appendChild(imgGiant);
         divFullScreen.style.zIndex = "10000";
-        imgDivFullScreen.classList.add("exist");
-        exist = document.querySelector(".exist");
+        imgGiant.classList.add("exist");
         closeBtn();
-      } else {
+      } else if (exist !== null ) {
         exist = document.querySelector(".exist");
+        let clseBtn = document.querySelector("#closeBtnPic");
         divFullScreen.style.zIndex = "-10000";
         exist.remove();
+        clseBtn.remove();
       }
     };
   }
+
+  // const listenCloseBtn = document.querySelector("#clseBtnPic");
+  // listenCloseBtn.onclick = function () {
+  //   exist = document.querySelector(".exist");
+  //   let clseBtn = document.querySelector("#closeBtnPic");
+  //   divFullScreen.style.zIndex = "-10000";
+  //   exist.remove();
+  //   clseBtn.remove();
+  // };
 }
 
 // we test on witch page of galleries we're on
 // then 1st: small pictures in column to générate.
 // 2st: large pictures with 5s before changing in large display zone
 // and 3st: click on small pic on the right show the picture un full screen. re click to close the pic un full screen.
-if (animalsPicCarousel !== null) {
-  addingImgCarrousel(animalsPicCarousel, animalsArray);
+if (animalsSmallPic !== null) {
+  addingSmallRightImg(animalsSmallPic, animalsArray);
   showPictureLarge(animalsArray);
-  showPicFS(animalsArray);
-} else if (autoPicCarousel !== null) {
-  addingImgCarrousel(autoPicCarousel, carsArray);
+  showPicGiant(animalsArray);
+} else if (autoSmallPic !== null) {
+  addingSmallRightImg(autoSmallPic, carsArray);
   showPictureLarge(carsArray);
-  showPicFS(carsArray);
-} else if (nbPicCarousel !== null) {
-  addingImgCarrousel(nbPicCarousel, nbArray);
+  showPicGiant(carsArray);
+} else if (nbSmallPic !== null) {
+  addingSmallRightImg(nbSmallPic, nbArray);
   showPictureLarge(nbArray);
-  showPicFS(nbArray);
-} else if (paysagePicCarousel !== null) {
-  addingImgCarrousel(paysagePicCarousel, paysageArray);
+  showPicGiant(nbArray);
+} else if (paysageSmallPic !== null) {
+  addingSmallRightImg(paysageSmallPic, paysageArray);
   showPictureLarge(paysageArray);
-  showPicFS(paysageArray);
-} else if (spitzbergPicCarousel !== null) {
-  addingImgCarrousel(spitzbergPicCarousel, spitzbergArray);
+  showPicGiant(paysageArray);
+} else if (spitzbergSmallPic !== null) {
+  addingSmallRightImg(spitzbergSmallPic, spitzbergArray);
   showPictureLarge(spitzbergArray);
-  showPicFS(spitzbergArray);
+  showPicGiant(spitzbergArray);
 }

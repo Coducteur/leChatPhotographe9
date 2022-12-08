@@ -82,7 +82,7 @@ body {
   padding: 10px;
 }
 
-.gridContainer-carousel {
+.gridContainer-smallPic {
   grid-area: 2/10/10/11;
 }
 
@@ -206,10 +206,10 @@ li {
   border-radius: 15px;
 }
 
-.carousel {
+.smallPic {
   height: 100%;
-  background-image: url("./media/img_maxRez/Film_strip.png");
-  background-size: contain;
+  /* background-image: url("./media/img_maxRez/Film_strip.png"); */
+  /* background-size: contain; */
   overflow-y: scroll;
   margin-right: 15px;
 }
@@ -218,17 +218,18 @@ li {
 .nbGal,
 .paysageGal,
 .spitzbergGal {
-  overflow-y: scroll;
+  overflow-y: scroll !important;
 }
 
-.carousel img {
-  width: 74%;
+.smallPic img {
+  width: 70%;
   height: auto;
-  margin-left: 15px;
-  border: #07020d 3px solid;
+  margin-left: 1.2em;
+  border: black 2px solid;
+  border-radius: 15px;
 }
-
-.carousel img:hover {
+#closeBtnPic:hover,
+.smallPic img:hover {
   cursor: pointer;
   box-shadow: 2px 5px 10px var(--colorTheme1);
 }
@@ -239,13 +240,28 @@ li {
   z-index: -1000;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 .fullScreen img {
   width: auto;
-  height: 97%;
+  height: 90%;
   border: black 2px solid;
   border-radius: 15px;
+}
+.insertBtn {
+  grid-area: 1/10/2/11;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#closeBtnPic {
+  width: 8em;
+  border: black 2px solid;
+  border-radius: 15px;
+  font-size: 0.1px;
+  background-color: white;
 }
 
 /*============================================================
@@ -358,8 +374,11 @@ li {
   align-items: center;
 }
 .form {
-  background-color: rgba(255, 255, 255, 0.224);
+  background-color: rgba(255, 255, 255, 0.528);
   text-align: center;
+}
+textarea {
+  resize: none;
 }
 
 .flexContact {
