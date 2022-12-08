@@ -243,7 +243,6 @@ function clickForPicGiant(nameOfArray) {
         });
       } // oui, elle existe, et l'utilisateur veut regarder d'autres photos avant de fermer l'image en cliquant sur le bouton:
       else {
-        // exist = document.querySelector(".exist");
         let clseBtn = document.querySelector("#closeBtnPic");
         divFullScreen.style.zIndex = "-10000";
         exist.remove();
@@ -280,18 +279,19 @@ function closeBtn() {
   insertBtn.appendChild(closeBtn);
   closeBtn.textContent = "<< retour galerie";
 }
+// fonction à revoir:
+// // affichage de la photo Geant:
+// function GiantPic(nameOfArray, index) {
+//   const imgGiant = document.createElement("img");
+//   imgGiant.src = nameOfArray[index].url;
+//   imgGiant.alt = nameOfArray[index].alt;
+//   imgGiant.id = nameOfArray[index].name;
+//   // on l'affiche sur toutes nos zones (sauf 7), on affiche la photo par dessus le reste et on indique que la photo géante existe.
+//   divFullScreen.appendChild(imgGiant);
+//   divFullScreen.style.zIndex = "10000";
+//   imgGiant.classList.add("exist");
+// }
 
-// affichage de la photo Geant:
-function GiantPic(nameOfArray, index) {
-  const imgGiant = document.createElement("img");
-  imgGiant.src = nameOfArray[index].url;
-  imgGiant.alt = nameOfArray[index].alt;
-  imgGiant.id = nameOfArray[index].name;
-  // on l'affiche sur toutes nos zones (sauf 7), on affiche la photo par dessus le reste et on indique que la photo géante existe.
-  divFullScreen.appendChild(imgGiant);
-  divFullScreen.style.zIndex = "10000";
-  imgGiant.classList.add("exist");
-}
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //        on teste notre page et on appelle nos fonctions pour affichage des zones
