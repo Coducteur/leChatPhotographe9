@@ -68,9 +68,9 @@ for (let i = 1; i <= 28; i++) {
   // on ajoute dans le tableau:
   animalsArray.push({
     // 1. le nom de la photo: nomPhoto(i)
-    name: `animals${i}`,
+    name: `animals(${i})`,
     // 2. url de la photo:
-    url: `media/img_maxRez/animals${i}.jpg`,
+    url: `media/img_maxRez/animaux/animals(${i}).JPG`,
     //3. texte en commun à la galerie:
     alt: `image d'un animal`,
   });
@@ -82,7 +82,7 @@ const carsArray = [];
 for (let i = 1; i <= 28; i++) {
   carsArray.push({
     name: `cars(${i})`,
-    url: `media/img_maxRez/auto/cars(${i}).jpg`,
+    url: `media/img_maxRez/auto/cars(${i}).JPG`,
     alt: `image d'une voiture`,
   });
 }
@@ -91,7 +91,7 @@ const nbArray = [];
 for (let i = 1; i <= 10; i++) {
   nbArray.push({
     name: `nb(${i})`,
-    url: `media/img_maxRez/N&B/n&b(${i}).jpg`,
+    url: `media/img_maxRez/N&B/n&b(${i}).JPG`,
     alt: `image en noir et blanc`,
   });
 }
@@ -100,7 +100,7 @@ const paysageArray = [];
 for (let i = 1; i <= 7; i++) {
   paysageArray.push({
     name: `paysage(${i})`,
-    url: `media/img_maxRez/paysage/paysage(${i}).jpg`,
+    url: `media/img_maxRez/paysage/paysage(${i}).JPG`,
     alt: `image d'un paysage`,
   });
 }
@@ -109,7 +109,7 @@ const spitzbergArray = [];
 for (let i = 1; i <= 17; i++) {
   spitzbergArray.push({
     name: `spitzberg(${i})`,
-    url: `media/img_maxRez/spitzberg/spitzberg(${i}).jpg`,
+    url: `media/img_maxRez/spitzberg/spitzberg(${i}).JPG`,
     alt: `image du spitzberg`,
   });
 }
