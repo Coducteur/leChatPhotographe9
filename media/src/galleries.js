@@ -183,7 +183,7 @@ function showPicGiant(nameOfArray) {
         closeBtn();
       } else if (exist !== null ) {
         exist = document.querySelector(".exist");
-        let clseBtn = document.querySelector("#closeBtnPic");
+        // let clseBtn = document.querySelector("#closeBtnPic");
         divFullScreen.style.zIndex = "-10000";
         exist.remove();
         clseBtn.remove();

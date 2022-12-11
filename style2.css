@@ -206,6 +206,7 @@ li {
   height: 70vh;
   border: black 2px solid;
   border-radius: 15px;
+  object-fit: cover;
 }
 
 .smallPic {
@@ -250,6 +251,7 @@ li {
   height: 90vh;
   border: black 2px solid;
   border-radius: 15px;
+  object-fit: cover;
 }
 .insertBtn {
   grid-area: 1/10/2/11;
@@ -406,29 +408,44 @@ textarea {
 ************************** Media queries: *************************
 ******************************************************************/
 
-/* @media screen and (min-width: 1400px) {
-    body {
-        max-width: 1400px;
-        display: grid; */
-/* grid-template-rows: repeat(10, 10vh);
-        grid-template-columns: repeat(10, 140px); 
+@media screen and (max-width: 1000px) {
+  .main-Nav {
+    font-size: 0.8em;
+  }
 }
-}*/
 
-@media screen and (max-width: 825px) {
-  .gridContainer-articleIndex {
-    grid-area: 3/7/10/11;
-    margin: 20px;
+@media screen and (max-width: 884px) {
+  .gridContainer-Header {
+    grid-area: 1/1/2/11;
+  }
+  .gridContainer-subMenu {
+    grid-area: 2/3/3/10;
+  }
+  .gridContainer-subMenu h2 {
+    font-size: 1.2em;
+  }
+  .gridContainer-smallPic {
+    grid-area: 3/10/10/11;
+  }
+  .gridContainer-Footer{
+    grid-area: 10/1/11/11;
   }
 
   h1 p {
     font-size: 2rem;
   }
+  .main-Nav li a {
+    padding-left: 2px;
+    transition: 2.5s;
+  }
+  .flex-footer{
+    margin: 10px 0 0 10px;
+  }
 }
 
 @media screen and (max-height: 535px) {
   h1 p {
-    font-size: 1rem;
+    font-size: 0.7rem;
     padding-left: 0;
   }
 }
