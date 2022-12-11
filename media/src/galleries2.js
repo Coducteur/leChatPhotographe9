@@ -70,7 +70,7 @@ for (let i = 1; i <= 28; i++) {
     // 1. le nom de la photo: nomPhoto(i)
     name: `animals${i}`,
     // 2. url de la photo:
-    url: `media/img_maxRez/animaux/animals${i}.jpg`,
+    url: `media/img_maxRez/animals${i}.jpg`,
     //3. texte en commun à la galerie:
     alt: `image d'un animal`,
   });
