@@ -74,7 +74,7 @@ body {
 }
 
 .gridContainer-Footer {
-  grid-area: 10/1/11/4;
+  grid-area: 10/1/11/3;
 }
 
 .gridContainer-subMenu {
@@ -94,14 +94,15 @@ body {
   border-radius: 1em;
   transition: left 1s;
 }
-.invisible {
-  display: none;
-}
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* ++++++ end of main common zones grid area ++++++ */
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
+.invisible {
+  display: none;
+}
 
 h1 {
   font-family: "Rubik Microbe", cursive;
@@ -144,6 +145,8 @@ li {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  margin-left: 1em;
+  font-size: 0.75em;
 }
 
 /* icones size in footer*/
@@ -426,8 +429,8 @@ textarea {
   margin-top: 4px;
   width: 25vw;
   /* height: 30vh; */
-  }
-  
+}
+
 /*============================================================
 ==================end of contact   page ======================
 ============================================================*/
@@ -552,7 +555,7 @@ textarea {
     padding: 5px;
   }
   .flexContact {
-      display: flex;
+    display: flex;
     flex-direction: row;
     width: 65vw;
     justify-content: space-around;
