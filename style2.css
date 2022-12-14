@@ -85,13 +85,9 @@ body {
 .gridContainer-smallPic {
   grid-area: 2/10/10/11;
 }
-.burger-nav {
-  grid-area: 1/1/3/3;
-  z-index: -20;
-  display: none;
-}
+
 .burgerNAV-mobile {
-  grid-area: 2/1/5/7;
+  grid-area: 2/1/7/7;
 
   z-index: 20000;
   background-color: white;
@@ -159,6 +155,10 @@ li {
 
 .mouseOverImg-cursor:hover {
   cursor: pointer;
+}
+
+.burger-nav img {
+  padding: 10px;
 }
 
 /*=====================================================
@@ -512,16 +512,6 @@ textarea {
     .gridContainer-smallPic {
       grid-area: 3/1/11/3;
       display: none;
-    }
-    .burger-nav {
-      grid-area: 1/1/3/3;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      z-index: 10000;
-    }
-    .burger-nav img {
-      padding-top: 10px;
     }
   }
   .sub-menu li {
