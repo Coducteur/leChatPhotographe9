@@ -560,4 +560,13 @@ textarea {
     width: 65vw;
     justify-content: space-around;
   }
+  .gridContainer-subMenu ul li h2 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-height: 500px) {
+  .flex-footer img {
+    width: 1em;
+    height: 1em;
+  }
 }
