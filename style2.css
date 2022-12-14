@@ -85,6 +85,10 @@ body {
 .gridContainer-smallPic {
   grid-area: 2/10/10/11;
 }
+.burger-nav {
+  grid-area: 1/1/3/3;
+  display: none;
+}
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* +++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -96,6 +100,10 @@ h1 {
   font-family: "Rubik Microbe", cursive;
   font-size: 2rem;
   padding-left: 15px;
+  z-index: -100;
+}
+.h1-burger {
+  display: none;
 }
 
 .main-Nav {
@@ -120,7 +128,7 @@ h2 {
 }
 
 li {
-  margin: 1.5rem;
+  margin: 1.2rem;
 }
 
 /*container Flex (copy & ico)*/
@@ -421,6 +429,9 @@ textarea {
   .main-Nav {
     font-size: 0.8em;
   }
+  .gridContainer-subMenu h2 {
+    z-index: 100;
+    font-size: 1.2em;
 }
 
 @media screen and (max-width: 884px) {
@@ -431,7 +442,8 @@ textarea {
     grid-area: 2/3/3/10;
   }
   .gridContainer-subMenu h2 {
-    font-size: 1.2em;
+    z-index: 100;
+    font-size: 0.8em;
   }
   .gridContainer-smallPic {
     grid-area: 3/10/10/11;
@@ -439,9 +451,12 @@ textarea {
   .gridContainer-Footer {
     grid-area: 10/1/11/11;
   }
-
-  h1 p {
-    font-size: 2rem;
+  .h1  {
+    display: none;
+  }
+  .h1-burger {
+    display: block;
+    font-size: 1.2rem;
   }
   .main-Nav li a {
     padding-left: 2px;
@@ -452,9 +467,55 @@ textarea {
   }
 }
 
-@media screen and (max-height: 535px) {
-  h1 p {
-    font-size: 0.7rem;
-    padding-left: 0;
+
+@media screen and (max-width: 689px) {
+  .gridContainer-Header {
+    grid-area: 1/3/2/11;
+    padding: 10px 1em;
+  }
+  .gridContainer-sectionLeft {
+    display: none;
+  }
+  
+  .gridContainer-sectionRight {
+    grid-area: 3/1/7/11;
+    border-radius: 5px;
+  }
+  
+  .gridContainer-Footer {
+    grid-area: 10/1/11/11;
+    font-size: 0.8rem;
+  }
+  
+  .gridContainer-subMenu {
+    grid-area: 2/1/3/11;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+  }
+  
+  .gridContainer-smallPic {
+    grid-area: 3/1/11/3;
+    display: none;
+  }
+  .burger-nav {
+    grid-area: 1/1/3/3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .burger-nav img{
+    padding-top: 10px;
+  }
+  }
+  .sub-menu li{
+    margin: 0.5em;
+  }
+  .flex-footer img{
+    display: none;
+  }
+  .mainDisplay{
+    grid-area: 1/1/3/3;
   }
 }
