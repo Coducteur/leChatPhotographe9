@@ -74,7 +74,7 @@ body {
 }
 
 .gridContainer-Footer {
-  grid-area: 10/1/11/3;
+  grid-area: 10/1/11/4;
 }
 
 .gridContainer-subMenu {
@@ -143,7 +143,6 @@ li {
 .flex-footer {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   flex-direction: column;
 }
 
@@ -425,8 +424,10 @@ textarea {
   display: flex;
   flex-direction: column;
   margin-top: 4px;
-}
-
+  width: 25vw;
+  /* height: 30vh; */
+  }
+  
 /*============================================================
 ==================end of contact   page ======================
 ============================================================*/
@@ -458,9 +459,6 @@ textarea {
     }
     .gridContainer-smallPic {
       grid-area: 3/10/10/11;
-    }
-    .gridContainer-Footer {
-      grid-area: 10/1/11/11;
     }
 
     .h1 {
@@ -541,5 +539,22 @@ textarea {
     .background-mainIndex {
       height: 60vh;
     }
+  }
+}
+@media screen and (max-height: 751px) {
+  .flex-containerPrez H2 {
+    font-size: 1.5em;
+  }
+  .flex-containerPrez p {
+    font-size: 0.75em;
+  }
+  .flex-containerPrez {
+    padding: 5px;
+  }
+  .flexContact {
+      display: flex;
+    flex-direction: row;
+    width: 65vw;
+    justify-content: space-around;
   }
 }
